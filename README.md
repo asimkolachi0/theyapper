@@ -1,30 +1,78 @@
 # theYapper
 
-A responsive, mobile-first social community built with Next.js, TypeScript, and Supabase.
+A mobile-first social platform built with **Next.js**, **TypeScript**, and **Supabase**.
 
-## Features
-- Responsive desktop, tablet, and mobile layouts
-- Social feed with compose, search, likes, bookmarks, and follow toggles
-- Email/password sign-up and sign-in with Supabase Auth
+> A community-focused web app for sharing posts, discovering content, and connecting with other people.
+
+## Overview
+
+theYapper is a social networking project focused on a responsive experience across desktop, tablet, and mobile devices. The codebase uses Supabase for authentication and data persistence.
+
+## Current features
+
+- Responsive, mobile-first interface
+- Social feed and post composer
+- Search, likes, bookmarks, and follow toggles
+- Email/password authentication with Supabase Auth
 - Supabase-backed post reading and publishing
 - Dark appearance toggle
-- Row Level Security schema for profiles, posts, follows, likes, comments, and bookmarks
+- Database schema with Row Level Security for profiles, posts, follows, likes, comments, and bookmarks
+
+## Tech stack
+
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Backend and authentication:** Supabase
+- **Deployment:** Vercel-compatible
 
 ## Run locally
-1. Install Node.js 18+.
-2. Run `npm install`.
-3. Copy `.env.example` to `.env.local` and set your Supabase project URL and anon/publishable key.
-4. In your Supabase SQL Editor, run `supabase/schema.sql`.
-5. Run `npm run dev` and open http://localhost:3000.
 
-Without Supabase environment variables the app shows sample posts and lets you preview local composer interactions. Accounts and persistent publishing require Supabase configuration.
+### Requirements
 
-## Deploy to Vercel
-Import this GitHub repository in Vercel and add:
+- Node.js 18 or newer
+- npm
+- A Supabase project for persistent accounts and posts
+
+### Setup
+
+1. Clone this repository.
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Copy `.env.example` to `.env.local` and configure your Supabase project URL and publishable/anonymous key.
+4. Run the SQL in `supabase/schema.sql` in your Supabase SQL Editor.
+5. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+6. Open [http://localhost:3000](http://localhost:3000).
+
+Without Supabase environment variables, the app can display sample content for preview. Authentication and persistent publishing require a configured Supabase project.
+
+## Deploy
+
+Import the repository into Vercel and configure these environment variables:
+
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
-Then deploy. Never put a Supabase service-role key in a browser-exposed environment variable.
+Never expose a Supabase service-role key in a browser-accessible environment variable.
 
-## Current limitations
-The first release UI includes placeholders for direct messages, notifications, reposting, and full threaded replies. The database schema includes comments and follows, but production-ready interactive screens for every feature still need to be implemented.
+## Project status
+
+This is an actively developing project. Some social features may still be placeholders or require further implementation before production use. Review and test authentication, database policies, and user interactions before launching publicly.
+
+## Security notes
+
+- Keep secrets and private credentials out of source control.
+- Use environment variables for deployment configuration.
+- Review Supabase Row Level Security policies before production deployment.
+
+---
+
+Built as an independent project by [@asimalikolachi123](https://github.com/asimalikolachi123).
