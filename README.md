@@ -75,4 +75,4 @@ This is an actively developing project. Some social features may still be placeh
 
 ---
 
-Built as an independent project by [@asimalikolachi0](https://github.com/asimalikolachi0).
+Built as an independent project by [@asimakolachi0](https://github.com/asimkolachi0).
